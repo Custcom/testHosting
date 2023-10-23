@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>2022503519_EX5_2</title>
+    <style>
+        body{
+               background-color: black;
+             
+            }
+ 
+            .main{
+                background-image: url("front.jpg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                border: 5px solid white;
+               border-image: linear-gradient(to right, #6699ff 0%, #9406f2 100%) ;
+               border-image-slice: 1;
+               color: rgb(255, 255, 255);
+                text-align: center;
+                border-radius: 20px;
+                width:640px;
+                height: 360px;
+               
+                margin: 10% 29%;
+                
+            }
+           
+             h1{
+                display: block;
+                padding: 20px;
+                margin-top: 0%;
+                color: #000000;
+
+            }
+
+            button{
+                background-color: #1284ee;
+                color: #fff;
+                border: none;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+                padding: 10px 30px;
+                font-size: 20px;
+                border-radius: 10px;
+                cursor: pointer;
+                margin: 32% 30%;
+            }
+    </style>
+    </head>
+   <body>
+    <div class="border">
+        
+        <div class="main">
+            
+        <h1 id="mes">FRONTEND QUIZ</h1>
+        <form onsubmit="return stquiz()">
+        <button type="submit">Start</button></form>
+    </div></div>
+    <script>
+        function stquiz(){
+            window.open("quiz1.html")
+        }
+    </script>
+
+   </body>
