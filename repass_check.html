@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2022503519_EX6_1</title>
+        <style>
+            body{
+                background-color: rgb(2, 2, 2);
+            }
+            .border{
+                background:linear-gradient(to bottom right  , #00ffff 0%, #ff6699 100%);  ;
+                border-radius: 15px;
+                box-shadow: 10px,0px,rgba(0, 0, 0, 0.5);
+                width: 40%;
+                margin: 10% 30%;
+            }
+            .box{
+                background-color:black;
+                color:aliceblue;
+                text-align:center;
+                
+            
+                border-radius:8px;
+                margin: 1%  1%;
+
+            }
+
+            .box input{
+                border-radius: 5px;
+                font-size: 15px;
+                padding: 8px;
+            }
+            .box button{
+                background-color: #1284ee;
+                color: #fff;
+                border: none;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+                padding: 10px 20px;
+                font-size: 15px;
+                border-radius: 10px;
+                cursor: pointer;
+                margin: 5% 30%;
+            }
+            .box label{
+                display: block;
+                padding: 10px;
+                font-size: 25px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function validate(){
+            var firstpass=document.myname.password.value;
+            var repass=document.myname.repassword.value;
+            if (firstpass==repass){
+                return true;
+            }
+            else{
+                alert("Password must be same");
+                return false;
+            }}
+        </script>
+        <div class="border">
+            <div class="box">
+        <h1 style="font-size: 40px;">Login</h1><br>
+        <form name="myname" action="https://www.google.com/" onsubmit="return validate()">
+           
+        <label>Username : <input type="text" id="username"placeholder="Username "required></label><br><br>
+        <label>Password : <input type="password" id="password" placeholder="8-character password" required></label><br><br>
+        <label>Re-type Password : <input type="password" id="repassword" placeholder="Retype password" required></label><br><br>
+        <button type="submit">Submit</button>
+        </div></div> 
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QUIZ 4</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        
+        .timer{
+            color: whitesmoke;
+            background-color: rgb(60, 173, 222);
+            text-align: center;
+            margin: 5% 75%;
+            font-size: 25px;
+            border: 5px solid whitesmoke ;
+            border-radius: 100%;
+            width: 8%;
+            height: 5%;
+        }
+        .quiz_box{
+            color: white;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 10px;
+            width: 45%;
+            margin: 7% 25%;
+        }
+        .quiz_box legend{
+            color: whitesmoke;
+            font-size: 30px;
+            padding: 10px;
+        }
+        .quiz_box label{
+            color: whitesmoke;
+            font-size:20px;
+            padding: 10px;
+            tab-size: 100px;
+        }
+        label[id="qn"]{
+            font-size: 25px;
+            padding: 10px;
+        }
+        .quiz_box button{
+            background-color: rgb(35, 90, 255);
+            color: whitesmoke;
+            border: none;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+            padding: 10px 30px;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0% 0% 0% 75%;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer">
+        <h1 id="timer">10</h1>
+    </div>
+    <form id="quiz">
+        <fieldset class="quiz_box">
+            <legend>Question 4</legend>
+            <label> When there is an indefinite or an infinite value during an arithmetic computation in a program, then JavaScript prints</label><br>
+            <input type="radio" id="wrg6" name="qn1" value="wronganswer">
+            <label for="crt"> Prints an exception error</a></label><br><br>
+            <input type="radio" id="WRG1" name="qn1" value="wronganswer"> 
+            <label for="wrg1">Prints an overflow error</label><br><br>
+            <input type="radio" id="crt" name="qn1" value="Crtanswer"> 
+            <label id="crt">Displays "Infinity"</label><br><br>
+            <input type="radio" id="wrg3" name="qn1" value="wronganswer"> 
+            <label id="wrg3">None of the above</label><br>
+            <button type="submit" id="submitBtn">Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        var t=10;
+        var timerInterval;
+
+        timerInterval = setInterval(myTimer, 1000);
+
+        function myTimer() { 
+            t--;
+                    
+            if (t < 0){
+                clearInterval(timerInterval);
+                alert("Time Up!!!");
+                window.location.href = "quiz5.html";
+            }   
+            else{
+                document.getElementById("timer").innerHTML = t;
+            }
+        }
+
+        const submitButton = document.getElementById('submitBtn');
+
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const selectedOption = document.querySelector('input[name="qn1"]:checked');
+            const selectedButtonId = selectedOption ? selectedOption.id : null;
+
+            clearInterval(timerInterval); // Stop the timer
+
+            if (selectedButtonId === 'crt') {
+                localStorage.points = Number(localStorage.points || 0) + 1;
+                alert("Correct! Your points: " + localStorage.points);
+            } else {
+                alert("Wrong answer");
+            }
+
+            window.location.href = "quiz5.html"; // Redirect to next page
+        });
+    </script>
+</body>
+</html>
